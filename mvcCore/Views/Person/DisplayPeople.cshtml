@@ -1,0 +1,51 @@
+﻿@model IList<mvcCore.Models.Domain.Person>
+@{
+
+}
+
+<div class="mt-2" style="width 50%">
+
+ <div class="row" >
+     <div class="col-md-4">
+         <h2>People</h2>
+            <a href="/Person/AddPerson" class="btn btn-primary">Add Person </a>
+
+     </div>
+     <table class=" table table-striped">
+         <thread>
+
+             <tr>
+                 <th>Name</th>
+                 <th>Email </th>
+                    <th>Action </th>
+             </tr>
+             
+                @foreach(var person in Model)
+                {
+                    <tr>
+                        <td>
+                            @person.Name;
+                        </td>
+                        <td>
+                            @person.Email;
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="@Url.Action("EditPerson","Person")?id=@person.Id">Edit</a>
+                            <a  class="btn btn-danger" href="Person/DeletePerson?id=@person.Id ">Delete</a>
+                        </td>
+                    </tr>
+                }
+
+
+         </thread>
+         
+     </table>
+
+
+ </div>
+        
+
+    
+
+
+</div>

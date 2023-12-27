@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "Hash": "iP0W7hdPGTqNiSJtCqxEGszcD1X5V6bg+X+Z9vF5CzM=",
+  "Source": "mvcCore",
+  "BasePath": "_content/mvcCore",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "mvcCore\\wwwroot",
+      "Source": "mvcCore",
+      "ContentRoot": "C:\\Users\\black\\OneDrive\\Desktop\\SFDA\\JD\\mvcCore\\mvcCore\\wwwroot\\",
+      "BasePath": "_content/mvcCore",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\black\\OneDrive\\Desktop\\SFDA\\JD\\mvcCore\\mvcCore\\wwwroot\\favicon.ico",
+      "SourceId": "mvcCore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\black\\OneDrive\\Desktop\\SFDA\\JD\\mvcCore\\mvcCore\\wwwroot\\",
+      "BasePath": "_content/mvcCore",
+      "RelativePath": "favicon.ico",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.ico"
+    }
+  ]
+}
