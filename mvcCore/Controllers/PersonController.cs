@@ -7,9 +7,10 @@ namespace mvcCore.Controllers
     {
 
         private readonly DatabaseContext _ctx;
-        public PersonController(DatabaseContext ctx) {
+        public PersonController(DatabaseContext ctx)
+        {
             _ctx = ctx;
-        
+
         }
         public IActionResult Index()
         {
@@ -23,20 +24,18 @@ namespace mvcCore.Controllers
             TempData["greeting3"] = "It is TempData Message";
             return View();
         }
+        // get the methods ( are they usually get methods by default or not ?
+        public IActionResult AddPerson()
+        {
 
-        // get the methods ( are they ususally get methods by defaul tor not ?
+            return View();
 
-		public IActionResult AddPerson()
-		{
-
-			return View();
-
-		}
+        }
 
         [HttpPost]
-        public IActionResult AddPerson(Person person) 
+        public IActionResult AddPerson(Person person)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View();
             }
@@ -44,7 +43,7 @@ namespace mvcCore.Controllers
             try
             {
                 //business logic , operation on the models 
-                _ctx.Person.Add(person); 
+                _ctx.Person.Add(person);
                 _ctx.SaveChanges();
                 TempData["msg"] = "Added Sucessfully ";
                 return RedirectToAction("AddPerson");
@@ -54,8 +53,8 @@ namespace mvcCore.Controllers
                 TempData["msg"] = "Couldn't be added ";
                 return View();
             }
-           
-            
+
+
 
 
 
@@ -66,11 +65,11 @@ namespace mvcCore.Controllers
             // model is a not a shown variable such as people 
             var people = _ctx.Person.ToList();
 
-            return View(people); 
+            return View(people);
         }
 
         //editing people information 
-        public IActionResult EditPerson( int id)
+        public IActionResult EditPerson(int id)
         {
             var person = _ctx.Person.Find(id);
 
@@ -80,7 +79,7 @@ namespace mvcCore.Controllers
 
 
         //deleting people 
-        public IActionResult DeletePerson( int id )
+        public IActionResult DeletePerson(int id)
         {
 
 
@@ -106,9 +105,9 @@ namespace mvcCore.Controllers
 
 
 
-         
 
-            
+
+
         }
         [HttpPost]
         public IActionResult EditPerson(Person person)
@@ -121,15 +120,15 @@ namespace mvcCore.Controllers
             try
             {
                 var fetchedPerson = _ctx.Person.Find(person.Id);
-               if (fetchedPerson != null)
+                if (fetchedPerson != null)
                 {
-                   fetchedPerson.Name = person.Name;
-                   fetchedPerson.Email = person.Email;
-                   _ctx.Person.Update(fetchedPerson);
-                  _ctx.SaveChanges();
-                  TempData["msg"] = "Updated Sucessfully ";
-                   return RedirectToAction("DisplayPeople");
-               }
+                    fetchedPerson.Name = person.Name;
+                    fetchedPerson.Email = person.Email;
+                    _ctx.Person.Update(fetchedPerson);
+                    _ctx.SaveChanges();
+                    TempData["msg"] = "Updated Sucessfully ";
+                    return RedirectToAction("DisplayPeople");
+                }
 
 
             }
